@@ -1,0 +1,4 @@
+anthropic==0.122.0
+feedparser==6.0.14
+requests==2.34.2
+tzdata==2026.3

@@ -1,0 +1,581 @@
+{
+  "timezone": "America/Chicago",
+  "freshness_hours": 336,
+  "sections": [
+    "top_signal",
+    "frontier_labs",
+    "dev_tools",
+    "enterprise_ai",
+    "enterprise_platforms",
+    "research_digest",
+    "community_pulse"
+  ],
+  "popular_rss_feeds": [
+    {
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/rss.xml",
+      "homepage": "https://openai.com/news/"
+    },
+    {
+      "name": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "homepage": "https://deepmind.google/discover/blog/"
+    },
+    {
+      "name": "Google AI Blog",
+      "url": "https://blog.google/technology/ai/rss/",
+      "homepage": "https://blog.google/technology/ai/"
+    },
+    {
+      "name": "Microsoft AI Blog",
+      "url": "https://blogs.microsoft.com/feed/",
+      "homepage": "https://blogs.microsoft.com/ai/"
+    },
+    {
+      "name": "NVIDIA Generative AI Blog",
+      "url": "https://blogs.nvidia.com/blog/category/generative-ai/feed/",
+      "homepage": "https://blogs.nvidia.com/blog/category/generative-ai/"
+    },
+    {
+      "name": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "homepage": "https://aws.amazon.com/blogs/machine-learning/"
+    },
+    {
+      "name": "MIT Technology Review — AI",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+      "homepage": "https://www.technologyreview.com/topic/artificial-intelligence/"
+    },
+    {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "homepage": "https://techcrunch.com/category/artificial-intelligence/"
+    },
+    {
+      "name": "VentureBeat AI",
+      "url": "https://venturebeat.com/category/ai/feed/",
+      "homepage": "https://venturebeat.com/ai/"
+    },
+    {
+      "name": "The Verge — AI",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "homepage": "https://www.theverge.com/ai-artificial-intelligence"
+    },
+    {
+      "name": "Ars Technica — AI",
+      "url": "https://arstechnica.com/ai/feed/",
+      "homepage": "https://arstechnica.com/ai/"
+    },
+    {
+      "name": "Wired — AI",
+      "url": "https://www.wired.com/feed/tag/ai/latest/rss",
+      "homepage": "https://www.wired.com/tag/artificial-intelligence/"
+    },
+    {
+      "name": "IEEE Spectrum — AI",
+      "url": "https://spectrum.ieee.org/feeds/topic/artificial-intelligence.rss",
+      "homepage": "https://spectrum.ieee.org/topic/artificial-intelligence/"
+    },
+    {
+      "name": "MIT Sloan Management Review",
+      "url": "https://sloanreview.mit.edu/feed/",
+      "homepage": "https://sloanreview.mit.edu/"
+    },
+    {
+      "name": "Berkeley AI Research (BAIR)",
+      "url": "https://bair.berkeley.edu/blog/feed.xml",
+      "homepage": "https://bair.berkeley.edu/blog/"
+    },
+    {
+      "name": "MarkTechPost",
+      "url": "https://www.marktechpost.com/feed/",
+      "homepage": "https://www.marktechpost.com/"
+    },
+    {
+      "name": "KDnuggets",
+      "url": "https://www.kdnuggets.com/feed",
+      "homepage": "https://www.kdnuggets.com/"
+    },
+    {
+      "name": "Synced Review",
+      "url": "https://syncedreview.com/feed/",
+      "homepage": "https://syncedreview.com/"
+    },
+    {
+      "name": "AI News",
+      "url": "https://www.artificialintelligence-news.com/feed/",
+      "homepage": "https://www.artificialintelligence-news.com/"
+    },
+    {
+      "name": "Simon Willison's Blog",
+      "url": "https://simonwillison.net/atom/everything/",
+      "homepage": "https://simonwillison.net/"
+    }
+  ],
+  "sources": {
+    "frontier_labs": [
+      {
+        "name": "Anthropic News (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:anthropic.com+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.anthropic.com/news"
+      },
+      {
+        "name": "OpenAI News",
+        "url": "https://openai.com/news/rss.xml",
+        "homepage": "https://openai.com/news/"
+      },
+      {
+        "name": "Google DeepMind Blog",
+        "url": "https://deepmind.google/blog/rss.xml",
+        "homepage": "https://deepmind.google/discover/blog/"
+      },
+      {
+        "name": "Microsoft AI Blog",
+        "url": "https://blogs.microsoft.com/feed/",
+        "homepage": "https://blogs.microsoft.com/ai/"
+      },
+      {
+        "name": "Meta AI Blog (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Meta+AI%22+blog+OR+announces+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://ai.meta.com/blog/"
+      },
+      {
+        "name": "Mistral AI News (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Mistral+AI%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://mistral.ai/news/"
+      },
+      {
+        "name": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/feed.xml",
+        "homepage": "https://huggingface.co/blog"
+      },
+      {
+        "name": "Amazon Science",
+        "url": "https://www.amazon.science/index.rss",
+        "homepage": "https://www.amazon.science/"
+      },
+      {
+        "name": "Apple Machine Learning Research",
+        "url": "https://machinelearning.apple.com/rss.xml",
+        "homepage": "https://machinelearning.apple.com/"
+      },
+      {
+        "name": "Cohere (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Cohere+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://cohere.com/blog"
+      },
+      {
+        "name": "xAI / Grok (via Google News)",
+        "url": "https://news.google.com/rss/search?q=xAI+Grok+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://x.ai/news"
+      },
+      {
+        "name": "Stability AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Stability+AI%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://stability.ai/news"
+      },
+      {
+        "name": "AI21 Labs (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22AI21+Labs%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.ai21.com/blog"
+      },
+      {
+        "name": "IBM Research (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22IBM+Research%22+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://research.ibm.com/blog"
+      }
+    ],
+    "dev_tools": [
+      {
+        "name": "Claude Code / Devin / Cognition (via Google News)",
+        "url": "https://news.google.com/rss/search?q=(%22Claude+Code%22+OR+Devin+OR+Cognition+AI)+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://cognition.ai/"
+      },
+      {
+        "name": "Windsurf / Codeium (via Google News)",
+        "url": "https://news.google.com/rss/search?q=(Windsurf+OR+Codeium)+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://windsurf.com/"
+      },
+      {
+        "name": "Cursor AI editor (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Cursor%22+AI+code+editor+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://cursor.com/"
+      },
+      {
+        "name": "GitHub Blog — AI/Copilot",
+        "url": "https://github.blog/ai-and-ml/feed/",
+        "homepage": "https://github.blog/ai-and-ml/"
+      },
+      {
+        "name": "Latent Space",
+        "url": "https://www.latent.space/feed",
+        "homepage": "https://www.latent.space/"
+      },
+      {
+        "name": "JetBrains AI Blog",
+        "url": "https://blog.jetbrains.com/feed/",
+        "homepage": "https://blog.jetbrains.com/"
+      },
+      {
+        "name": "Sourcegraph / Cody Blog",
+        "url": "https://sourcegraph.com/blog/rss.xml",
+        "homepage": "https://sourcegraph.com/blog"
+      },
+      {
+        "name": "Replit AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Replit+AI+agent+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://blog.replit.com/"
+      },
+      {
+        "name": "Vercel v0 / AI SDK (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Vercel+%22v0%22+OR+%22AI+SDK%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://vercel.com/blog"
+      },
+      {
+        "name": "Continue.dev (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Continue.dev%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://blog.continue.dev/"
+      }
+    ],
+    "enterprise_ai": [
+      {
+        "name": "McKinsey AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:mckinsey.com+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.mckinsey.com/capabilities/quantumblack/our-insights"
+      },
+      {
+        "name": "Gartner AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Gartner%22+(%22artificial+intelligence%22+OR+%22generative+AI%22)+(report+OR+forecast+OR+research)+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.gartner.com/en/topics/artificial-intelligence"
+      },
+      {
+        "name": "MIT Sloan Management Review",
+        "url": "https://sloanreview.mit.edu/feed/",
+        "homepage": "https://sloanreview.mit.edu/"
+      },
+      {
+        "name": "HBR (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:hbr.org+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://hbr.org/"
+      },
+      {
+        "name": "Deloitte AI Institute (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Deloitte+AI+Institute%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.deloitte.com/us/en/about/deloitte-ai-institute.html"
+      },
+      {
+        "name": "BCG on AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22BCG%22+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.bcg.com/capabilities/artificial-intelligence"
+      },
+      {
+        "name": "Forrester AI Research",
+        "url": "https://www.forrester.com/blogs/feed/",
+        "homepage": "https://www.forrester.com/artificial-intelligence/"
+      },
+      {
+        "name": "CB Insights",
+        "url": "https://www.cbinsights.com/research/feed/",
+        "homepage": "https://www.cbinsights.com/research/artificial-intelligence/"
+      },
+      {
+        "name": "a16z AI Content (via Google News)",
+        "url": "https://news.google.com/rss/search?q=a16z+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://a16z.com/tag/ai/"
+      },
+      {
+        "name": "Sequoia Capital AI Writeups",
+        "url": "https://www.sequoiacap.com/feed/",
+        "homepage": "https://www.sequoiacap.com/topic/ai/"
+      },
+      {
+        "name": "Ben's Bites",
+        "url": "https://www.bensbites.com/feed",
+        "homepage": "https://www.bensbites.com/"
+      },
+      {
+        "name": "The Neuron (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22The+Neuron%22+AI+newsletter+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.theneurondaily.com/"
+      },
+      {
+        "name": "Stratechery",
+        "url": "https://stratechery.com/feed/",
+        "homepage": "https://stratechery.com/"
+      },
+      {
+        "name": "Politico Tech",
+        "url": "https://rss.politico.com/technology.xml",
+        "homepage": "https://www.politico.com/technology"
+      },
+      {
+        "name": "Brookings AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:brookings.edu+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.brookings.edu/topic/artificial-intelligence/"
+      },
+      {
+        "name": "PwC AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=PwC+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.pwc.com/gx/en/issues/artificial-intelligence.html"
+      },
+      {
+        "name": "Accenture AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Accenture+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.accenture.com/us-en/about/artificial-intelligence-index"
+      },
+      {
+        "name": "World Economic Forum AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22World+Economic+Forum%22+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.weforum.org/focus/artificial-intelligence/"
+      },
+      {
+        "name": "Fast Company AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:fastcompany.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.fastcompany.com/artificial-intelligence"
+      },
+      {
+        "name": "Fortune AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:fortune.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://fortune.com/section/ai/"
+      },
+      {
+        "name": "IBM Institute for Business Value (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22IBM+Institute+for+Business+Value%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.ibm.com/thought-leadership/institute-business-value"
+      },
+      {
+        "name": "CIO.com AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:cio.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.cio.com/category/artificial-intelligence/"
+      },
+      {
+        "name": "ZDNet AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:zdnet.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.zdnet.com/topic/artificial-intelligence/"
+      },
+      {
+        "name": "Bain & Company AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Bain+%26+Company+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.bain.com/insights/topics/artificial-intelligence/"
+      },
+      {
+        "name": "KPMG AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=KPMG+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://kpmg.com/xx/en/our-insights/ai-and-technology.html"
+      },
+      {
+        "name": "EY AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22EY%22+artificial+intelligence+enterprise+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.ey.com/en_gl/services/ai"
+      },
+      {
+        "name": "Business Insider AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:businessinsider.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.businessinsider.com/tech/ai"
+      },
+      {
+        "name": "IDC AI Research (via Google News)",
+        "url": "https://news.google.com/rss/search?q=IDC+artificial+intelligence+research+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.idc.com/promo/ai"
+      },
+      {
+        "name": "Deloitte Insights AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Deloitte+Insights%22+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www2.deloitte.com/us/en/insights/focus/artificial-intelligence.html"
+      },
+      {
+        "name": "McKinsey Quarterly (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22McKinsey+Quarterly%22+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.mckinsey.com/quarterly/overview"
+      }
+    ],
+    "journalism": [
+      {
+        "name": "TechCrunch AI",
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "homepage": "https://techcrunch.com/category/artificial-intelligence/"
+      },
+      {
+        "name": "VentureBeat AI",
+        "url": "https://venturebeat.com/category/ai/feed/",
+        "homepage": "https://venturebeat.com/ai/"
+      },
+      {
+        "name": "Axios AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:axios.com+(%22artificial+intelligence%22+OR+%22generative+AI%22+OR+%22AI+agent%22)+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.axios.com/technology/artificial-intelligence"
+      },
+      {
+        "name": "The Information AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:theinformation.com+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.theinformation.com/"
+      },
+      {
+        "name": "WSJ — AI/Tech",
+        "url": "https://feeds.a.dj.com/rss/RSSWSJD.xml",
+        "homepage": "https://www.wsj.com/tech/ai"
+      },
+      {
+        "name": "Bloomberg Technology",
+        "url": "https://feeds.bloomberg.com/technology/news.rss",
+        "homepage": "https://www.bloomberg.com/technology"
+      },
+      {
+        "name": "Reuters Technology (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:reuters.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.reuters.com/technology/"
+      },
+      {
+        "name": "Engadget AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:engadget.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.engadget.com/"
+      },
+      {
+        "name": "CNBC AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:cnbc.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.cnbc.com/ai/"
+      },
+      {
+        "name": "Semafor Tech (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:semafor.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.semafor.com/technology"
+      },
+      {
+        "name": "The Guardian Technology (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:theguardian.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.theguardian.com/technology/artificialintelligenceai"
+      },
+      {
+        "name": "Quartz AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:qz.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://qz.com/"
+      },
+      {
+        "name": "The Next Web AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:thenextweb.com+artificial+intelligence+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://thenextweb.com/"
+      },
+      {
+        "name": "Business Insider Tech (via Google News)",
+        "url": "https://news.google.com/rss/search?q=site:businessinsider.com+tech+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.businessinsider.com/tech"
+      }
+    ],
+    "enterprise_platforms": [
+      {
+        "name": "Salesforce AI / Agentforce (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Salesforce+Agentforce+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.salesforce.com/agentforce/"
+      },
+      {
+        "name": "Oracle AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22Oracle%22+(%22AI+agent%22+OR+%22Fusion+AI%22+OR+%22OCI%22+AI)+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.oracle.com/artificial-intelligence/"
+      },
+      {
+        "name": "Tableau / Salesforce Data Cloud (via Google News)",
+        "url": "https://news.google.com/rss/search?q=(Tableau+OR+%22Data+Cloud%22)+Salesforce+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.tableau.com/"
+      },
+      {
+        "name": "ServiceNow AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=%22ServiceNow%22+(%22Now+Assist%22+OR+%22AI+agent%22+OR+%22Agentic+AI%22)+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.servicenow.com/ai.html"
+      },
+      {
+        "name": "SAP AI News",
+        "url": "https://news.sap.com/topics/artificial-intelligence/feed/",
+        "homepage": "https://news.sap.com/topics/artificial-intelligence/"
+      },
+      {
+        "name": "Workday AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Workday+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://blog.workday.com/"
+      },
+      {
+        "name": "Adobe AI / Firefly (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Adobe+Firefly+OR+%22Adobe+Sensei%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.adobe.com/ai.html"
+      },
+      {
+        "name": "Zendesk AI (via Google News)",
+        "url": "https://news.google.com/rss/search?q=Zendesk+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.zendesk.com/blog/"
+      }
+    ],
+    "research_digest": [
+      {
+        "name": "Hacker News AI threads",
+        "url": "https://hnrss.org/newest?q=AI+OR+LLM+OR+%22large+language+model%22&points=50",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      {
+        "name": "arXiv cs.AI",
+        "url": "http://export.arxiv.org/rss/cs.AI",
+        "homepage": "https://arxiv.org/list/cs.AI/recent"
+      },
+      {
+        "name": "Import AI",
+        "url": "https://importai.substack.com/feed",
+        "homepage": "https://importai.substack.com/"
+      },
+      {
+        "name": "TLDR AI",
+        "url": "https://tldr.tech/api/rss/ai",
+        "homepage": "https://tldr.tech/ai"
+      },
+      {
+        "name": "Don't Worry About the Vase",
+        "url": "https://thezvi.substack.com/feed",
+        "homepage": "https://thezvi.substack.com/"
+      },
+      {
+        "name": "Google Research Blog",
+        "url": "https://research.google/blog/rss/",
+        "homepage": "https://research.google/blog/"
+      },
+      {
+        "name": "MIT News — AI",
+        "url": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "homepage": "https://news.mit.edu/topic/artificial-intelligence2"
+      },
+      {
+        "name": "arXiv cs.CL",
+        "url": "http://export.arxiv.org/rss/cs.CL",
+        "homepage": "https://arxiv.org/list/cs.CL/recent"
+      }
+    ],
+    "community_pulse": [
+      {
+        "name": "Hacker News Front Page",
+        "url": "https://hnrss.org/frontpage",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      {
+        "name": "r/artificial (top, via Google News fallback not used)",
+        "url": "https://www.reddit.com/r/artificial/top/.rss?t=day",
+        "homepage": "https://www.reddit.com/r/artificial/"
+      },
+      {
+        "name": "r/MachineLearning (top)",
+        "url": "https://www.reddit.com/r/MachineLearning/top/.rss?t=day",
+        "homepage": "https://www.reddit.com/r/MachineLearning/"
+      },
+      {
+        "name": "Lobsters",
+        "url": "https://lobste.rs/rss",
+        "homepage": "https://lobste.rs/"
+      },
+      {
+        "name": "r/LocalLLaMA (top)",
+        "url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
+        "homepage": "https://www.reddit.com/r/LocalLLaMA/"
+      },
+      {
+        "name": "Product Hunt — AI",
+        "url": "https://www.producthunt.com/feed?category=artificial-intelligence",
+        "homepage": "https://www.producthunt.com/categories/artificial-intelligence"
+      }
+    ]
+  }
+}
