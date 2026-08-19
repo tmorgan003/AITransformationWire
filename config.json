@@ -1,6 +1,6 @@
 {
   "timezone": "America/Chicago",
-  "freshness_hours": 336,
+  "freshness_hours": 120,
   "sections": [
     "top_signal",
     "frontier_labs",

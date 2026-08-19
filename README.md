@@ -4,7 +4,7 @@ A locally-hosted daily briefing dashboard for an AI Transformation Office. It fe
 
 ## What it does
 
-- **Fetches** every configured RSS/Atom feed concurrently, going back up to 14 days.
+- **Fetches** every configured RSS/Atom feed concurrently, going back up to 5 days for the daily briefing (Popular RSS keeps its own 14-day window). The raw fetch is cached (see [Fetch caching](#fetch-caching)) so re-running the pipeline after a code change doesn't re-hit every feed.
 - **Curates** the fetched items into a daily briefing with one structured call to Claude — sorted into `top_signal`, `frontier_labs`, `dev_tools`, `enterprise_ai`, `journalism`, `enterprise_platforms`, `research_digest`, and `community_pulse`, plus a handful of discussion questions.
 - **Tags** every item (`Claude Code`, `Devin`, `Windsurf`, `Agents`, `LLMs`, `Coding Tools`, `Enterprise`, `Funding`, `Safety & Policy`, `Research`, `Open Source`, `Robotics`, `Hardware`, `Data & Infra`) so the dashboard can be filtered client-side.
 - **Renders** a wire-service-style dashboard (red masthead, Archivo type, color-coded content "beats") with a sticky tag filter, per-article source/via tags, and a two-week archive.
@@ -100,8 +100,19 @@ Everything lives in **`config.json`** at the project root — no code changes ne
 }
 ```
 
-- `freshness_hours` — how far back the **daily briefing** pipeline (Claude-curated sections) looks for fresh items. Currently 336 hours (14 days).
+- `freshness_hours` — how far back the **daily briefing** pipeline (Claude-curated sections) looks for fresh items. Currently 120 hours (5 days).
 - The **Popular RSS** section uses its own fixed 14-day window (`fetchers.MAX_ENTRY_AGE_DAYS`), independent of `freshness_hours`.
+
+## Fetch caching
+
+Fetching ~100 RSS sources is the slow, network-bound part of a run. `app.run` caches the raw fetch result to `cache/fetch_cache.json` and reuses it on the next run instead of re-fetching, as long as the cache is younger than `freshness_hours` — once it's older than that, it can no longer contain anything within the briefing's own freshness window anyway, so a live re-fetch happens automatically.
+
+This means:
+- Iterating on `render.py`, `summarize.py`, the prompt, or anything else code-side re-runs instantly against the same cached data — no network calls.
+- The pipeline naturally re-fetches on its own roughly every `freshness_hours` (5 days by default), rather than needing a daily schedule.
+- To force a live re-fetch sooner (e.g. you know new sources were added to `config.json`), run `python -m app.run --refresh` or set `FORCE_REFRESH=1`.
+
+`cache/` is gitignored — it's local, disposable, and rebuilt automatically.
 - Every source entry needs a `homepage` — it's used both for the clickable per-article source tag and the Settings/Resources source listing.
 - Sites without a working native RSS feed fall back to a scoped Google News query (`...+when:14d&hl=en-US&gl=US&ceid=US:en`).
 

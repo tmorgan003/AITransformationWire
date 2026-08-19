@@ -1,6 +1,7 @@
 db/
 output/
 logs/
+cache/
 __pycache__/
 *.pyc
 *.log

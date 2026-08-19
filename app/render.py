@@ -201,8 +201,9 @@ section[id] { scroll-margin-top: 62px; }
 .lead-media { width: 100%; aspect-ratio: 16/7.5; border-radius: 2px; overflow: hidden; margin-bottom: 16px;
   animation: lead-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .lead-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.lead-media.block, .top-item .media.block { display: flex; align-items: flex-end; padding: 20px; background: var(--signal); }
-.top-item .media.block { padding: 14px; }
+.lead-media.block, .top-item .media.block { display: flex; align-items: center; aspect-ratio: auto;
+  height: auto; padding: 14px 18px; background: var(--signal); }
+.top-item .media.block { padding: 10px 14px; margin-bottom: 10px; }
 .lead-media.block span, .top-item .media.block span { font-family: Archivo, sans-serif; font-weight: 900; color: var(--signal-ink);
   font-size: 1rem; text-transform: uppercase; letter-spacing: -0.01em; opacity: 0.85; }
 .top-item .media.block span { font-size: 0.78rem; }

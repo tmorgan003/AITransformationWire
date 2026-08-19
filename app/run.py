@@ -12,6 +12,7 @@ from app import fetchers, store, summarize, render  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 LOG_PATH = ROOT / "logs" / "run.log"
+CACHE_PATH = ROOT / "cache" / "fetch_cache.json"
 
 
 def _log(line: str) -> None:
@@ -37,16 +38,56 @@ def main() -> int:
 
 def _run() -> int:
     config = json.loads((ROOT / "config.json").read_text())
-    freshness_hours = config.get("freshness_hours", 36)
+    freshness_hours = config.get("freshness_hours", 120)
 
     have_key = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    force_refresh = "--refresh" in sys.argv or os.environ.get("FORCE_REFRESH") == "1"
 
     conn = store.connect()
     store.prune_old(conn)
     run_id = store.start_run(conn)
     errors: list[str] = []
 
-    items_by_category, sources_ok, fetch_errors = fetchers.fetch_all(config["sources"])
+    # Fetching ~100 RSS sources is the slow, network-bound part of a run. A code-only change
+    # (render tweak, prompt edit) shouldn't have to re-pull every feed to see its effect, so the
+    # raw fetch result is cached and reused until it's older than freshness_hours — at that point
+    # the cache can no longer contain anything within the briefing's own freshness window anyway,
+    # so a live re-fetch is unavoidable. --refresh (or FORCE_REFRESH=1) forces one sooner.
+    cached = None
+    if not force_refresh and CACHE_PATH.exists():
+        try:
+            cached = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
+            cache_age = datetime.now(timezone.utc) - datetime.fromisoformat(cached["fetched_at"])
+            if cache_age > timedelta(hours=freshness_hours):
+                cached = None
+        except (OSError, json.JSONDecodeError, KeyError, ValueError):
+            cached = None
+
+    if cached is not None:
+        items_by_category = cached["items_by_category"]
+        sources_ok = cached["sources_ok"]
+        fetch_errors = cached["fetch_errors"]
+        popular_rss_by_cat = cached["popular_rss_by_cat"]
+        popular_sources_ok = cached["popular_sources_ok"]
+        popular_errors = cached["popular_errors"]
+        _log(f"using cached fetch from {cached['fetched_at']} — pass --refresh to force a live pull")
+    else:
+        items_by_category, sources_ok, fetch_errors = fetchers.fetch_all(config["sources"])
+        # Popular AI RSS feeds: mechanical fetch only — never sent to Claude, so this section
+        # costs nothing to refresh regardless of how often the page is reloaded.
+        popular_rss_by_cat, popular_sources_ok, popular_errors = fetchers.fetch_all(
+            {"popular_rss": config.get("popular_rss_feeds", [])})
+        CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        CACHE_PATH.write_text(json.dumps({
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "items_by_category": items_by_category,
+            "sources_ok": sources_ok,
+            "fetch_errors": fetch_errors,
+            "popular_rss_by_cat": popular_rss_by_cat,
+            "popular_sources_ok": popular_sources_ok,
+            "popular_errors": popular_errors,
+        }, indent=2), encoding="utf-8")
+
     errors.extend(fetch_errors)
     sources_all = [s["name"] for cat in config["sources"].values() for s in cat]
     sources_failed = [s for s in sources_all if s not in sources_ok]
@@ -59,17 +100,14 @@ def _run() -> int:
         deduped = [it for it in fresh if store.headline_hash(it["headline"]) not in seen]
         filtered[category] = deduped
 
-    # Popular AI RSS feeds: mechanical fetch only — never sent to Claude, so this section costs
-    # nothing to refresh regardless of how often the page is reloaded. Own 14-day window,
-    # independent of the tight daily-briefing freshness_hours cutoff above: the main page shows
-    # the latest slice, the full two weeks lives on its own "show more" page (see render.py).
-    popular_cutoff = datetime.now(timezone.utc) - timedelta(days=fetchers.MAX_ENTRY_AGE_DAYS)
-    popular_rss_by_cat, popular_sources_ok, popular_errors = fetchers.fetch_all(
-        {"popular_rss": config.get("popular_rss_feeds", [])})
+    # Popular RSS keeps its own 14-day window, independent of the tighter daily-briefing
+    # freshness_hours cutoff above: the main page shows the latest slice, the full two weeks
+    # lives on its own "show more" page (see render.py).
     errors.extend(popular_errors)
     popular_names = [s["name"] for s in config.get("popular_rss_feeds", [])]
     sources_ok = sources_ok + popular_sources_ok
     sources_failed = sources_failed + [s for s in popular_names if s not in popular_sources_ok]
+    popular_cutoff = datetime.now(timezone.utc) - timedelta(days=fetchers.MAX_ENTRY_AGE_DAYS)
     popular_all = [it for it in popular_rss_by_cat.get("popular_rss", [])
                    if datetime.fromisoformat(it["published_at"]) >= popular_cutoff]
     popular_all.sort(key=lambda it: it["published_at"], reverse=True)
@@ -89,16 +127,27 @@ def _run() -> int:
     else:
         # Dev mode: no ANTHROPIC_API_KEY. Never call the API — write the fetched items for
         # manual curation, and use whatever curation is already waiting (if any) instead.
-        item_lookup = summarize.write_pending_items(filtered)
+        # item_lookup for RESOLVING curated item_ids is built from the full (undeduped) fetch,
+        # not `filtered`: `filtered` excludes items already marked "seen" by a prior run, but a
+        # previously-produced curation (fresh manual submission or the persisted cache) still
+        # needs to resolve those same items on every re-render, not just the run that first
+        # curated them.
+        _, item_lookup = summarize.build_flat_items(items_by_category)
+        summarize.write_pending_items(filtered)
         manual = summarize.load_manual_curated(item_lookup)
         if manual is not None:
             curated = manual
-            _log(f"DEV MODE used manually-curated data from {summarize.MANUAL_CURATED_PATH.name}")
+            _log(f"DEV MODE used manually-curated data from {summarize.MANUAL_CURATED_PATH.name} (cached for future runs)")
         else:
-            curated = summarize._empty_result()
-            errors.append("no ANTHROPIC_API_KEY — items written for manual curation, no curated data yet")
-            _log(f"DEV MODE no ANTHROPIC_API_KEY — wrote {summarize.PENDING_ITEMS_PATH.name} for manual curation")
-            print(f"No ANTHROPIC_API_KEY set. Fetched items written to {summarize.PENDING_ITEMS_PATH}.")
+            cached_curated = summarize.load_curated_cache()
+            if cached_curated is not None:
+                curated = cached_curated
+                _log(f"DEV MODE reused cached curated data from {summarize.CURATED_CACHE_PATH}")
+            else:
+                curated = summarize._empty_result()
+                errors.append("no ANTHROPIC_API_KEY — items written for manual curation, no curated data yet")
+                _log(f"DEV MODE no ANTHROPIC_API_KEY — wrote {summarize.PENDING_ITEMS_PATH.name} for manual curation")
+                print(f"No ANTHROPIC_API_KEY set. Fetched items written to {summarize.PENDING_ITEMS_PATH}.")
 
     out_path = render.write_dashboard(curated, item_lookup, sources_ok, sources_failed, popular_all)
 

@@ -25,6 +25,9 @@ OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output"
 PENDING_ITEMS_PATH = OUTPUT_DIR / "_pending_items.json"
 MANUAL_CURATED_PATH = OUTPUT_DIR / "_manual_curated.json"
 
+CACHE_DIR = Path(__file__).resolve().parent.parent / "cache"
+CURATED_CACHE_PATH = CACHE_DIR / "curated.json"
+
 CLIENT_TIMEOUT_SECONDS = 300
 
 
@@ -79,7 +82,25 @@ def load_manual_curated(item_lookup: dict[str, dict]) -> dict | None:
     curated["community_pulse"] = curated.get("community_pulse", [])[:5]
     curated["top_signal"] = curated.get("top_signal", [])[:5]
     curated["questions"] = curated.get("questions", [])[:3]
+    save_curated_cache(curated)
     return curated
+
+
+def save_curated_cache(curated: dict) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    CURATED_CACHE_PATH.write_text(json.dumps(curated, indent=2), encoding="utf-8")
+
+
+def load_curated_cache() -> dict | None:
+    """Dev mode fallback: reuse the last curation that was actually consumed, so a code-only
+    change (or re-running against the same cached fetch) doesn't drop back to an empty briefing
+    just because MANUAL_CURATED_PATH was already consumed on a prior run."""
+    if not CURATED_CACHE_PATH.exists():
+        return None
+    try:
+        return json.loads(CURATED_CACHE_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
 
 
 def curate(items_by_category: dict[str, list[dict]]) -> tuple[dict, dict[str, dict]]:
