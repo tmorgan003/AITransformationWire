@@ -14,11 +14,11 @@
 
 ## Tech Stack & Build Tooling
 
-- **Python** — manifest: `requirements.txt`, package manager: pip
+- **Python**: manifest `requirements.txt`, package manager pip
 
 ## Entry Points
 
-- No conventional entry point file was detected — check the manifest's run scripts.
+- No conventional entry point file was detected; check the manifest's run scripts.
 
 ## Data Flow
 

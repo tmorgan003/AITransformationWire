@@ -11,4 +11,4 @@ CodeAtlas looked for:
 
 Detected frameworks: none.
 
-If this is a library, a background-job-only service, or uses a routing style this scanner doesn't recognize yet, that would explain the empty result — CLI command frameworks (commander/yargs) and cron/queue-worker entry points aren't detected yet either.
+If this is a library, a background-job-only service, or uses a routing style this scanner doesn't recognize yet, that would explain the empty result; CLI command frameworks (commander/yargs) and cron/queue-worker entry points aren't detected yet either.
