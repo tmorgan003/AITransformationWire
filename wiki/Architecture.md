@@ -2,10 +2,6 @@
 
 [Home](Home.md) · [Data Model](Data-Model.md) · [Issues](Issues.md)
 
-No route groups or data models were detected by static analysis, so the data flow through this system cannot be described. The presence of db, logs, and output directories hints at some process that reads or writes data and produces logged output, but this is inferred from folder names alone, not from actual code analysis.
-
-_(above paragraph is deep-scan generated; sections below are derived directly from static analysis)_
-
 ## Directory Structure
 
 ```

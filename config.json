@@ -141,9 +141,9 @@
         "homepage": "https://ai.meta.com/blog/"
       },
       {
-        "name": "Mistral AI News (via Google News)",
-        "url": "https://news.google.com/rss/search?q=%22Mistral+AI%22+when:14d&hl=en-US&gl=US&ceid=US:en",
-        "homepage": "https://mistral.ai/news/"
+        "name": "Mistral AI News",
+        "url": "https://mistral.ai/rss.xml",
+        "homepage": "https://mistral.ai/news"
       },
       {
         "name": "Hugging Face Blog",
@@ -184,6 +184,16 @@
         "name": "IBM Research (via Google News)",
         "url": "https://news.google.com/rss/search?q=%22IBM+Research%22+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
         "homepage": "https://research.ibm.com/blog"
+      },
+      {
+        "name": "Salesforce AI Research",
+        "url": "https://news.google.com/rss/search?q=%22Salesforce%20AI%20Research%22+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.salesforceairesearch.com/news"
+      },
+      {
+        "name": "Adobe Research Blog",
+        "url": "https://news.google.com/rss/search?q=%22Adobe%20Research%22%20AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://research.adobe.com/news/"
       }
     ],
     "dev_tools": [
@@ -388,6 +398,11 @@
         "name": "McKinsey Quarterly (via Google News)",
         "url": "https://news.google.com/rss/search?q=%22McKinsey+Quarterly%22+AI+when:14d&hl=en-US&gl=US&ceid=US:en",
         "homepage": "https://www.mckinsey.com/quarterly/overview"
+      },
+      {
+        "name": "One Useful Thing (Ethan Mollick)",
+        "url": "https://www.oneusefulthing.org/feed",
+        "homepage": "https://www.oneusefulthing.org/"
       }
     ],
     "journalism": [
@@ -506,11 +521,6 @@
     ],
     "research_digest": [
       {
-        "name": "Hacker News AI threads",
-        "url": "https://hnrss.org/newest?q=AI+OR+LLM+OR+%22large+language+model%22&points=50",
-        "homepage": "https://news.ycombinator.com/"
-      },
-      {
         "name": "arXiv cs.AI",
         "url": "http://export.arxiv.org/rss/cs.AI",
         "homepage": "https://arxiv.org/list/cs.AI/recent"
@@ -544,6 +554,41 @@
         "name": "arXiv cs.CL",
         "url": "http://export.arxiv.org/rss/cs.CL",
         "homepage": "https://arxiv.org/list/cs.CL/recent"
+      },
+      {
+        "name": "Stanford HAI News",
+        "url": "https://news.google.com/rss/search?q=site%3Ahai.stanford.edu+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://hai.stanford.edu/news"
+      },
+      {
+        "name": "CMU Machine Learning Blog",
+        "url": "https://blog.ml.cmu.edu/feed/",
+        "homepage": "https://blog.ml.cmu.edu/"
+      },
+      {
+        "name": "The Gradient",
+        "url": "https://thegradient.pub/rss/",
+        "homepage": "https://thegradient.pub/"
+      },
+      {
+        "name": "The Batch (DeepLearning.AI)",
+        "url": "https://news.google.com/rss/search?q=%22The%20Batch%22%20DeepLearning.AI+when:14d&hl=en-US&gl=US&ceid=US:en",
+        "homepage": "https://www.deeplearning.ai/the-batch/"
+      },
+      {
+        "name": "Interconnects (Nathan Lambert)",
+        "url": "https://www.interconnects.ai/feed",
+        "homepage": "https://www.interconnects.ai/"
+      },
+      {
+        "name": "The Algorithmic Bridge",
+        "url": "https://thealgorithmicbridge.substack.com/feed",
+        "homepage": "https://thealgorithmicbridge.substack.com/"
+      },
+      {
+        "name": "Last Week in AI",
+        "url": "https://lastweekin.ai/feed",
+        "homepage": "https://lastweekin.ai/"
       }
     ],
     "community_pulse": [
@@ -553,29 +598,19 @@
         "homepage": "https://news.ycombinator.com/"
       },
       {
-        "name": "r/artificial (top, via Google News fallback not used)",
-        "url": "https://www.reddit.com/r/artificial/top/.rss?t=day",
-        "homepage": "https://www.reddit.com/r/artificial/"
-      },
-      {
-        "name": "r/MachineLearning (top)",
-        "url": "https://www.reddit.com/r/MachineLearning/top/.rss?t=day",
-        "homepage": "https://www.reddit.com/r/MachineLearning/"
-      },
-      {
         "name": "Lobsters",
         "url": "https://lobste.rs/rss",
         "homepage": "https://lobste.rs/"
       },
       {
-        "name": "r/LocalLLaMA (top)",
-        "url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
-        "homepage": "https://www.reddit.com/r/LocalLLaMA/"
-      },
-      {
         "name": "Product Hunt — AI",
         "url": "https://www.producthunt.com/feed?category=artificial-intelligence",
         "homepage": "https://www.producthunt.com/categories/artificial-intelligence"
+      },
+      {
+        "name": "AI Weirdness",
+        "url": "https://www.aiweirdness.com/rss/",
+        "homepage": "https://www.aiweirdness.com/"
       }
     ]
   }

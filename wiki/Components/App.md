@@ -5,8 +5,9 @@
 ## `app/fetchers.py`
 
 100 lines.
+**Owner:** tmorgan003 _(git blame — 1/1 commit(s))_
 
-**Dependencies (imports):** `calendar`, `re`, `concurrent.futures`, `datetime`, `feedparser`, `requests`, `.`
+**Dependencies (imports):** `concurrent.futures`, `concurrent.futures.ThreadPoolExecutor`, `concurrent.futures.as_completed`, `datetime`, `datetime.datetime`, `datetime.timedelta`, `datetime.timezone`, `.`, `./tags`, `calendar`, `re`, `feedparser`, `requests`
 
 **Functions/Methods:**
 
@@ -20,9 +21,10 @@
 
 ## `app/render.py`
 
-613 lines.
+631 lines.
+**Owner:** tmorgan003 _(git blame — 1/1 commit(s))_
 
-**Dependencies (imports):** `html`, `json`, `datetime`, `pathlib`, `zoneinfo`, `.tags`
+**Dependencies (imports):** `datetime`, `datetime.datetime`, `pathlib`, `pathlib.Path`, `zoneinfo`, `zoneinfo.ZoneInfo`, `.tags`, `.tags.TAG_VOCAB`, `html`, `json`
 
 **Functions/Methods:**
 
@@ -34,32 +36,33 @@
 | `_local_zone` | `config: dict | None = None` | 80 |
 | `_homepage_map` | `config: dict` | 85 |
 | `_resources_html` | `config: dict` | 97 |
-| `resolve_item` | `curated_item: dict, item_lookup: dict[int, dict]` | 302 |
-| `_local_time` | `item: dict, tz: ZoneInfo` | 309 |
-| `_media_html` | `item: dict, css_class: str, color_var: str = "signal"` | 314 |
-| `_thumb_html` | `item: dict, color_var: str` | 324 |
-| `_meta_html` | `item: dict, tz: ZoneInfo, homepage_map: dict[str, str], via: str` | 332 |
-| `_tags_html` | `item: dict` | 343 |
-| `_data_tags_attr` | `item: dict` | 351 |
-| `_lead_html` | `item: dict, tz: ZoneInfo, homepage_map: dict[str, str]` | 359 |
-| `_top_item_html` | `item: dict, tz: ZoneInfo, homepage_map: dict[str, str]` | 372 |
-| `_item_row_html` | `item: dict, tz: ZoneInfo, color_var: str, homepage_map: dict[str, str], via: str` | 383 |
-| `_raw_feed_html` | `items: list[dict], tz: ZoneInfo, homepage_map: dict[str, str]` | 396 |
-| `_section_html` | `key: str, curated_items: list[dict], item_lookup: dict[int, dict], tz: ZoneInfo,
-                   homepage_map: dict[str, str]` | 412 |
-| `render_dashboard` | `curated: dict, item_lookup: dict[int, dict], sources_ok: list[str],
-                      sources_failed: list[str], run_date: str, popular_rss: list[dict] | None = None` | 423 |
-| `render_rss_archive` | `items: list[dict], tz: ZoneInfo, homepage_map: dict[str, str]` | 532 |
-| `render_archive_index` | `—` | 565 |
-| `prune_old_output` | `days: int = 45` | 588 |
-| `write_dashboard` | `curated: dict, item_lookup: dict[int, dict], sources_ok: list[str],
-                     sources_failed: list[str], popular_rss: list[dict] | None = None` | 597 |
+| `resolve_item` | `curated_item: dict, item_lookup: dict[str, dict]` | 304 |
+| `_local_time` | `item: dict, tz: ZoneInfo` | 311 |
+| `_media_html` | `item: dict, css_class: str, color_var: str = "signal"` | 316 |
+| `_thumb_html` | `item: dict, color_var: str` | 326 |
+| `_meta_html` | `item: dict, tz: ZoneInfo, homepage_map: dict[str, str], via: str` | 334 |
+| `_tags_html` | `item: dict` | 345 |
+| `_data_tags_attr` | `item: dict` | 353 |
+| `_lead_html` | `item: dict, tz: ZoneInfo, homepage_map: dict[str, str]` | 361 |
+| `_top_item_html` | `item: dict, tz: ZoneInfo, homepage_map: dict[str, str]` | 374 |
+| `_item_row_html` | `item: dict, tz: ZoneInfo, color_var: str, homepage_map: dict[str, str], via: str` | 385 |
+| `_raw_feed_html` | `items: list[dict], tz: ZoneInfo, homepage_map: dict[str, str]` | 398 |
+| `_section_html` | `key: str, curated_items: list[dict], item_lookup: dict[str, dict], tz: ZoneInfo,
+                   homepage_map: dict[str, str]` | 414 |
+| `render_dashboard` | `curated: dict, item_lookup: dict[str, dict], sources_ok: list[str],
+                      sources_failed: list[str], run_date: str, popular_rss: list[dict] | None = None` | 425 |
+| `render_rss_archive` | `items: list[dict], tz: ZoneInfo, homepage_map: dict[str, str]` | 534 |
+| `render_archive_index` | `—` | 567 |
+| `prune_old_output` | `days: int = 45` | 600 |
+| `write_dashboard` | `curated: dict, item_lookup: dict[str, dict], sources_ok: list[str],
+                     sources_failed: list[str], popular_rss: list[dict] | None = None` | 615 |
 
 ## `app/run.py`
 
 128 lines.
+**Owner:** tmorgan003 _(git blame — 1/1 commit(s))_
 
-**Dependencies (imports):** `json`, `os`, `sys`, `traceback`, `datetime`, `pathlib`, `app`
+**Dependencies (imports):** `datetime`, `datetime.datetime`, `datetime.timedelta`, `datetime.timezone`, `pathlib`, `pathlib.Path`, `app`, `app.fetchers`, `app.store`, `app.summarize`, `json`, `os`, `sys`, `traceback`
 
 **Functions/Methods:**
 
@@ -72,8 +75,9 @@
 ## `app/server.py`
 
 156 lines.
+**Owner:** tmorgan003 _(git blame — 1/1 commit(s))_
 
-**Dependencies (imports):** `html`, `json`, `os`, `sys`, `threading`, `http.server`, `pathlib`, `urllib.parse`, `app.render`, `app`
+**Dependencies (imports):** `http.server`, `http.server.BaseHTTPRequestHandler`, `http.server.ThreadingHTTPServer`, `pathlib`, `pathlib.Path`, `urllib.parse`, `urllib.parse.urlparse`, `app.render`, `app.render.CSS`, `app.render.OUTPUT_DIR`, `app.render.ROOT`, `app`, `app.run`, `html`, `json`, `os`, `sys`, `threading`
 
 **Classes:**
 
@@ -96,8 +100,9 @@
 ## `app/store.py`
 
 97 lines.
+**Owner:** tmorgan003 _(git blame — 1/1 commit(s))_
 
-**Dependencies (imports):** `hashlib`, `json`, `re`, `sqlite3`, `datetime`, `pathlib`
+**Dependencies (imports):** `datetime`, `datetime.datetime`, `datetime.timedelta`, `datetime.timezone`, `pathlib`, `pathlib.Path`, `hashlib`, `json`, `re`, `sqlite3`
 
 **Functions/Methods:**
 
@@ -115,26 +120,29 @@
 
 ## `app/summarize.py`
 
-152 lines.
+161 lines.
+**Owner:** tmorgan003 _(git blame — 1/1 commit(s))_
 
-**Dependencies (imports):** `json`, `pathlib`, `anthropic`, `.tags`
+**Dependencies (imports):** `pathlib`, `pathlib.Path`, `.tags`, `.tags.TAG_VOCAB`, `hashlib`, `json`, `anthropic`
 
 **Functions/Methods:**
 
 | Name | Parameters | Line |
 |---|---|---|
-| `build_flat_items` | `items_by_category: dict[str, list[dict]]` | 28 |
-| `write_pending_items` | `items_by_category: dict[str, list[dict]]` | 49 |
-| `load_manual_curated` | `item_lookup: dict[int, dict]` | 59 |
-| `curate` | `items_by_category: dict[str, list[dict]]` | 75 |
-| `_empty_result` | `—` | 106 |
-| `_item_block` | `extra: dict | None = None` | 111 |
-| `_item_array` | `extra: dict | None = None` | 129 |
-| `_schema` | `—` | 133 |
+| `_stable_id` | `source_name: str, headline: str` | 29 |
+| `build_flat_items` | `items_by_category: dict[str, list[dict]]` | 37 |
+| `write_pending_items` | `items_by_category: dict[str, list[dict]]` | 57 |
+| `load_manual_curated` | `item_lookup: dict[str, dict]` | 67 |
+| `curate` | `items_by_category: dict[str, list[dict]]` | 83 |
+| `_empty_result` | `—` | 114 |
+| `_item_block` | `extra: dict | None = None` | 119 |
+| `_item_array` | `extra: dict | None = None` | 137 |
+| `_schema` | `—` | 141 |
 
 ## `app/tags.py`
 
 42 lines.
+**Owner:** tmorgan003 _(git blame — 1/1 commit(s))_
 
 **Dependencies (imports):** `re`
 
@@ -147,6 +155,7 @@
 ## `app/__init__.py`
 
 1 lines.
+**Owner:** tmorgan003 _(git blame — 1/1 commit(s))_
 
 _No functions or classes extracted from this file (may be config, types-only, or use a pattern this scanner doesn't recognize)._
 
